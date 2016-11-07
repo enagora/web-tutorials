@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CeldasPersonalizadasXAML;assembly=CeldasPersonalizadasXAML"
+             x:Class="CeldasPersonalizadasXAML.HomePage">             
+  <ListView x:Name="listView" 
+            IsVisible="true" 
+            ItemsSource="{x:Static local:HomePage.ListaJuegos}" 
+            RowHeight="80"
+            >    
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <ViewCell.View>
+            <StackLayout Orientation="Horizontal">
+              <Image Source="{Binding ImageUri}" WidthRequest="40" HeightRequest="40" />
+              <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                <Label Text="{Binding Titulo}" HorizontalOptions="FillAndExpand" />
+                <Label Text="{Binding Plataforma}" HorizontalOptions="FillAndExpand"/>
+              </StackLayout>
+            </StackLayout>
+          </ViewCell.View>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
+
+</ContentPage>
